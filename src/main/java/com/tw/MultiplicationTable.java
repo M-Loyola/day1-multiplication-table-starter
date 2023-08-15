@@ -18,10 +18,20 @@ public class MultiplicationTable {
     }
 
     public String generateTable(int start, int end) {
-        return null;
+        String generatedTable = "";
+        for (int i=start; i<=end; i++) {
+            for (int j=start; j<=i; j++) {
+                generatedTable += generateSingleExpression(j,i);
+                if (j != i) {
+                    generatedTable += "  ";
+                }
+            }
+            generatedTable += System.lineSeparator();
+        }
+        return generatedTable.trim();
     }
 
-    public String generateLine(int start, int row) { //2,5
+    public String generateLine(int start, int row) {
         String generatedLine = "";
         for (int i=start; i<=row; i++) {
             generatedLine += generateSingleExpression(i,row) + "  ";
