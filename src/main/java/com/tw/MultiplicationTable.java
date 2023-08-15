@@ -2,7 +2,7 @@ package com.tw;
 
 public class MultiplicationTable {
     public String buildMultiplicationTable(int start, int end) {
-        return null;
+        return isValid(start,end) ? generateTable(start, end) : null;
     }
 
     public Boolean isValid(int start, int end) {
@@ -14,7 +14,7 @@ public class MultiplicationTable {
     }
 
     public Boolean isStartNotBiggerThanEnd(int start, int end) {
-        return start < end;
+        return start <= end;
     }
 
     public String generateTable(int start, int end) {
